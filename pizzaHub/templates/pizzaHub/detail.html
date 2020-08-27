@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row pt-3">
+  <div class="col-2">
+
+  </div>
+  <div class="col-10">
+    <h1>{{ pizza.name }}</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+    <img src="{{ pizza.image.url }}" class="img-fluid" width=300 height=150 alt="">
+  </div>
+  <div class="col-4">
+  </div>
+</div>
+
+<div class="row pt-2">
+  <div class="col-4">
+  </div>
+  <div class="col-4 text-right">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+    <hr>
+    <h3><u>Description</u></h3>
+    <p>{{ pizza.description }}</p>
+    <hr>
+    <h2>Price :- Rs.{{ pizza.price }}</h2>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

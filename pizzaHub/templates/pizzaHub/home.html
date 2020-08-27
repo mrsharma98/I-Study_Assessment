@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+  {% for pizza in pizzas.all %}
+  <div class="row pt-3">
+    <div class="col-2" onclick="window.location='{% url 'detail' pizza.id %}'" style="cursor:pointer">
+      <img src="{{ pizza.image.url }}" class="img-fluid">
+    </div>
+    <div class="col-7">
+      <a href="{% url 'detail' pizza.id %}"><h3>{{ pizza.name }}</h3></a>
+      <p>{{ pizza.summary }}.....</p>
+    </div>
+    <div class="col-3">
+      <b>Price :- Rs.{{ pizza.price }}<b>
+    </div>
+
+  </div>
+
+<hr>
+
+  {% endfor %}
+{% else %}
+  <h1>Please Login.</h1>
+  <h2>If not a user please signup.</h2>
+{% endif %}
+{% endblock %}
